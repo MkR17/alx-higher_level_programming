@@ -1,13 +1,35 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
+
+"""The Square class implimentation."""
+
+
 class Square:
-    """ The class that defines a square by its size
+    """This is  a square with a size.
+
+    Attributes
+    ----------
+    size : int
+        The size of the square.
     """
+
     def __init__(self, size=0):
-        """ Method initializes the square object
+        """Square class constructor.
+
+        Parameters
+        ----------
+            size : int
+                The size of the new square.
+
+        Raises
+        ------
+        TypeError
+            If the wrong type is passed in for the size.
+        ValueError
+            If the size of the square is a negative number.
         """
         if not isinstance(size, int):
-            raise TypeError("size must be an integer")
+            raise TypeError("Size must be an integer")
         elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = int(size)
+            raise ValueError("The size cannot be negative")
+        self.__size = size
